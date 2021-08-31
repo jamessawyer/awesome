@@ -15,3 +15,14 @@
 
 1. [SVG 入门指南 - 前端小智 @掘金](https://juejin.cn/post/6844904017273815048)
 
+
+
+## 3. 跨浏览器通信
+
+用于多个窗口之间进行通信，交互
+
+1. [跨浏览器窗口 ，7种方式，你还知道几种呢？ - 云的世界@掘金](https://juejin.cn/post/7002012595200720927)
+   - postMessage
+   - StorageEvent
+   - Broadcast Channel
+   - Message Channel
