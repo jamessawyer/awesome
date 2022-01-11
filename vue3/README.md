@@ -7,3 +7,14 @@
 2. [⭐️⭐️ProgramWithErik - youtube](https://www.youtube.com/c/ProgramWithErik/videos)
    - vue3相关生态，全家桶
    - 还包含其它一些技术栈
+
+
+
+## 演讲
+
+1. [⭐️⭐️⭐️VueUse 作者 Anthony Fu 分享可组合的 Vue - antfu @vue conf 21](https://www.bilibili.com/video/BV1x54y1V7H6/?spm_id_from=333.788.recommend_more_video.0) 干货满满，常用vue3技巧和组合式API技巧
+   1. `ref` 作为参数和返回值的用法
+   2. `ref & unref` 组合使用，使函数更灵活
+   3. 使用 `InjectionKey` 对 `Provider & Inject` 提供类型定义
+   4. 使用 `provider & inject` 实现应用层面状态共享
+   5. `VueUse` 库一些实现
