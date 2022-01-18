@@ -11,3 +11,4 @@
      - `startTransition` & `useTransition` 用于定义优先级比较低的任务，避免对主任务造成卡顿的现象
      - `unstable_useOpaqueIdentifier` 用于生成不同的id
      - `useDeferredValue` 类似debouce效果
+3. [🀄️React18面试 - bucuocuo@bilibili](https://www.bilibili.com/video/BV1rK4y137D3?p=1) 这个是一个中文视频，基本和上面的2的内容差不多
