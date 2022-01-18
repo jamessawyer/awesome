@@ -40,4 +40,14 @@
 
 
 
+视频资源：
+
+1. [⭐️⭐️⭐️⭐️⭐️How Does React Actually Work - Philip Fabianek@youtube](https://www.youtube.com/watch?v=7YhdqIR2Yzo&list=PLxRVWC-K96b0ktvhd16l3xA6gncuGP7gJ&index=1) 强烈推荐这一系列视频
+   - React组件，元素和实例区别；
+   - 简要的介绍Fiber架构，如何理解Fiber，React渲染的不同阶段
+   - `useState` & `useEffect` 的基本原理，解释为什么不能将其放在条件语句和for循环中
+   - 解释React的更新过程，生命周期的调用时机和作用
+
+
+
 上面的链接中包含大量外部链接，都是不错的资源，对深度学习React是非常有帮助的
