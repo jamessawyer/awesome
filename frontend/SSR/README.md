@@ -6,6 +6,7 @@
    - 介绍了什么是SSR，现有React中存在的问题
    - 服务端 `Suspense` 如何解决这些问题，选择性水合方案
    - streaming HTML 优先发送需要的内容
+   - [Streaming Server Rendering with Suspense - ReactConf2021@youtube](https://www.youtube.com/watch?v=pj5N-Khihgc&ab_channel=ReactConf2021) 这个视频演示的就是上面讲到上面React18中的这些功能
 3. [vivo 商城架构升级-SSR 实战篇Nuxt.js - vivo@掘金](https://juejin.cn/post/6908883342034632712) 实战项目，介绍了ssr性能优化的一些手段，降级，ci/cd，监控，日志等等
 4. [理解Vue SSR原理，搭建项目框架 - Alaso@掘金](https://juejin.cn/post/6950802238524620837) 这篇是使用vue的ssr，其基本原理和React类似
 
