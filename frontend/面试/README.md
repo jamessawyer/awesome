@@ -5,3 +5,5 @@
 2. [2021年前端面试必读文章 - axuebin@掘金](https://juejin.cn/post/6844904116339261447)
 3. [盘点掘金 2021 点赞高达 6000，收藏过万的文章 - 狂奔滴小马@掘金](https://juejin.cn/post/7047153016771706916)
 4. [分享一些2021年个人收藏的前端学习资料 - LBJ@掘金](https://juejin.cn/post/7047428140078989348)
+5. [⭐️⭐️⭐️ lgwebdream/FE-Interview - @github 4.9k stars](https://github.com/lgwebdream/FE-Interview?utm_source=gold_browser_extension)
+   - 针对不同的面试题目，添加了不同的标签，可以根据标签去查看同一类型的问题，这个很棒
