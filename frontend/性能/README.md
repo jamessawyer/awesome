@@ -12,3 +12,14 @@
    - 缓存类型：强缓存 & 协商缓存
    - HTTP1.1协议缓存相关的headers: `Cache-Control` & `Last-Modified / If-Modified-Since` & `ETag / If-None-Match`
    - `ETag / If-None-Match` 相比  `Last-Modified / If-Modified-Since` 的优势
+
+
+
+
+
+实战：
+
+1. [Service Worker：让你的 Web 应用牛逼起来 - 前端进阶之旅@wx](https://mp.weixin.qq.com/s/Vj_Uw_QKTHrwuImC2nRt0A)
+   - 先简单介绍了前端性能提升的几种方式：http缓存，浏览器缓存，service worker缓存
+   - 介绍 `service worker` 缓存的具体实战步骤
+   - 手动配置缓存项太繁琐，[google workbox - @github](https://github.com/GoogleChrome/workbox) 对service worker进行了封装，提供了更便捷的操作方式
