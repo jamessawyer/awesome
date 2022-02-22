@@ -23,3 +23,10 @@
    - 先简单介绍了前端性能提升的几种方式：http缓存，浏览器缓存，service worker缓存
    - 介绍 `service worker` 缓存的具体实战步骤
    - 手动配置缓存项太繁琐，[google workbox - @github](https://github.com/GoogleChrome/workbox) 对service worker进行了封装，提供了更便捷的操作方式
+2. [如何将 Lighthouse Performance 评分从 20 提高到 96 - tyfy@掘金](https://juejin.cn/post/7012567366198362120)
+   - 本文介绍了如何测试页面性能得分：使用lighthouse工具
+   - 分析性能指标：`FP | FCP | LCP | TTI | TBT`, 并以实际项目作为依据去提升这些指标的得分
+   - 亮点：以vue项目为例使用异步加载组件的方式，利用 **分片加载（使用 `requestIdleCallback`）** 去加载和注册首屏不需要立马使用到的组件
+
+
+
