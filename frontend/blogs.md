@@ -2,6 +2,7 @@
 
 1. [政采云前端团队 - @掘金](https://juejin.cn/user/3456520257288974)
 2. [lizhen](https://lz5z.com/) js & 性能 & node.js 相关的技术文章
+2. [CUGGZ - @掘金](https://juejin.cn/user/3544481220801815) ts + react 相关优质的博客
 
 
 
