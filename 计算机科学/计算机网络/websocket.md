@@ -5,3 +5,8 @@
    - `socket` VS `websocket` 区别： socket是应用层与TCP/IP协议族通信的中间软件抽象层， 它是一组接口
    - websocket 事件驱动 + 初次握手采用http，然后进行协议升级
    - 聊天室功能的实现，心跳检测保活
+2. [前端架构师破局技能，NodeJS 落地 WebSocket 实践 - 杨成功@掘金](https://juejin.cn/post/7038491693997359117)
+   - Express 集成 [express-ws](npmjs.com/package/express-ws) ,客户端使用 `WebSocket` 
+   - 消息与广播，如何获取已连接的在线的客户端
+   - 安全与认证，ws连接前会先使用http建立连接，这个时候可以对用户进行认证，认证成功后，再将http服务进行升级（`upgrade`）
+   - websocket 在node作为 BFF（`Backend For Frontend`）中的应用场景
