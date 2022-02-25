@@ -9,3 +9,11 @@
 2. [一文彻底读懂ESLint - 程序员成长指北@wx](https://mp.weixin.qq.com/s/uUSTt_4ClYj7uqMCU1JEPw) 看完上面文章再看这篇就很好理解了
 3. [手摸手教你使用最新版husky(v7.0.1)让代码更优雅规范 - 啥也不是的小垃圾@掘金](https://juejin.cn/post/6982192362583752741) 讲解最新版本 husky + lint-staged 的使用方式
 
+
+
+可以使用 `mrm2` 创建 `lint-staged` 命令：
+
+```bash
+npx mrm@2 lint-staged
+```
+
