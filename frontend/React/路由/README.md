@@ -40,6 +40,23 @@
       - ssr中常用到的 `StaticRouter`
       - `Link & NavLink` 组件对a标签的封装和进一步封装
       - `useSearchParams` 对原生 `URLSearchParams` API的封装，用于帮助我们快速修改浏览器 `pathname` 的`search` 部分
+3. [什么，React Router已经到V6了 ？？- 暴走老七@掘金](https://juejin.cn/post/7025418839454122015)
+   - 对比v5版本的各种写法
+   - [懒加载组件 - stackblitz](https://stackblitz.com/github/remix-run/react-router/tree/main/examples/lazy-loading?file=src/App.tsx)
+
+
+
+
+
+
+
+
+
+## V5
+
+1. [React学习之实现React Router导航守卫 - suressk@掘金](https://juejin.cn/post/6989182520495439880)
+   - 利用 `history` 库提供的 `block` 和 `listen` 方法实现类似vue中的 `onRouterChange` & `onBeforeEach` 钩子
+   - 利用高阶组件 `withRouter` 对 `Router` 进行封装
 
 
 
