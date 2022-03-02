@@ -22,4 +22,12 @@
    - 服务端渲染状态的同步，异步数据的获取
    - 使用 `serialize-javascript` 防止xss攻击
    - 权限验证处理
+   - 使用 `react-helmet` 动态添加title，tdk等
+2. [🚀 react-software-architecture - @bilibili](https://www.bilibili.com/video/BV1MS4y167Bz) 这个课程来自 Linkedin
+   - 相比于上面视频，这个很简洁，时长也比较短，但是没有设计到权限处理这一块
+   - 使用 `styled-component` 做样式隔离
+   - 使用 `React.Context` 将服务端数据传递给客户端，封装 `useDataSSR` hook 用于客户端获取数据，**可以好好学习一下这种方式**
+   - 另外这个需要服务端渲染2次模板
+   - 使用 `lazy + Suspense` 懒加载路由
+   - [github地址](https://github.com/LinkedInLearning/react-software-architecture-2884265)
 
