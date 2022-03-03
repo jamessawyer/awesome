@@ -8,6 +8,12 @@
 
 
 
+React资源 + libs：
+
+1. [🚀 awesome-react - huaize2020@github](https://github.com/huaize2020/awesome-react) 分类很细的react生态，如果需要找什么库，可以在这里找
+
+
+
 
 
 

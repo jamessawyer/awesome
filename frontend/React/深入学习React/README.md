@@ -33,10 +33,20 @@
 8. [React Fiber Architecture - @github](https://github.com/acdlite/react-fiber-architecture?source=post_page---------------------------)
 9. [Lin Clark - A Cartoon Intro to Fiber @youtube](https://www.youtube.com/watch?v=ZCuYPiUIONs&ab_channel=FacebookDevelopers)
 10. 🀄️ [一文读懂 React 组件渲染核心原理 - Tecvan](https://mp.weixin.qq.com/s/M6orAXsSXDSKouIyuC9XUg)
+11. [🚀🀄️ react进阶时间指南 - 我不是外星人@掘金小册](https://juejin.cn/book/6945998773818490884/section/6951186955321376775) 很棒的进阶文章
 
 辅助链接：
 
 1. [React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/): React生命周期图表📈
+
+
+
+react内部实现：
+
+1. [react ref 为什么更新前要先设置为null，然后再赋值 - @github issues](https://github.com/facebook/react/issues/9328#issuecomment-298438237)
+2. [⭐️ reactjs/rfcs - @github](https://github.com/reactjs/rfcs) react功能讨论区，对很多react功能设计的缘由以及用法
+
+
 
 
 
