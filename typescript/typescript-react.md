@@ -8,3 +8,9 @@
    - 事件相关的类型，React事件类型 + 原生事件类型 + HTML标签类型
    - **axios** 的ts封装
    - 扩展阅读其ts专栏： [深入浅出TypeScript](https://juejin.cn/column/6997066245245763597)
+
+
+
+常见问题：
+1. [JSX.Element vs ReactNode vs ReactElement 类型的区别 - @stackoverflow](https://stackoverflow.com/a/58123882)
+
