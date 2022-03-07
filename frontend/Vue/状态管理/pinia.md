@@ -11,3 +11,13 @@
    - pinia使用注意事项，比如state，actions等的定义方式，可以参考 [Pinia 的学习路程 - 流量小生@掘金](https://juejin.cn/post/7069739313553997838)
    - 在线示例： [pinia-ts - @stackblitz](https://stackblitz.com/edit/vitejs-vite-cthpkx)
 
+
+
+进阶：
+
+1. [🚀 Pinia进阶：优雅的setup（函数式）写法+封装到你的企业项目 - 南山种子外卖选手@掘金](https://juejin.cn/post/7057439040911441957)
+   - 介绍了pinia的2中写法： `options & setup` 写法
+   - pinia代码分割，避免store重复打包，定义一个 `registerStore`方法，在 `main.ts` 中调用，打包优化
+   - 多个stores进行组合，父store的模式，通过父store暴露子store
+   - [pinia高阶用法 - @stackblitz](https://stackblitz.com/edit/vitejs-vite-rueqgk)
+
