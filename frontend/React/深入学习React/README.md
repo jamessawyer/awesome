@@ -34,6 +34,11 @@
 9. [Lin Clark - A Cartoon Intro to Fiber @youtube](https://www.youtube.com/watch?v=ZCuYPiUIONs&ab_channel=FacebookDevelopers)
 10. 🀄️ [一文读懂 React 组件渲染核心原理 - Tecvan](https://mp.weixin.qq.com/s/M6orAXsSXDSKouIyuC9XUg)
 11. [🚀🀄️ react进阶时间指南 - 我不是外星人@掘金小册](https://juejin.cn/book/6945998773818490884/section/6951186955321376775) 很棒的进阶文章
+12. [🚀🚀🀄️ 全网最简单的React Hooks源码解析，看不懂，打我 - React中文社区@wx](https://mp.weixin.qq.com/s/4-JYjizitK-VbRk5CQqlKA) 很详细的介绍了 `useState & useReducer & useEffect` mount & update的处理逻辑
+    - React如何管理区分Hooks: 每个hook都会创建一个 `Hook` 对象，React通过单链表依次将 `Hook` 添加到链表中，这也是为什么不能使用条件语句的原因
+    - useState & useReducer 更新时，将 `dispatch` 函数添加到 `queue` 中，这个 `queue` 是一个 **循环链表**
+    - `useEffect` 分为 `mountEffect & updateEffect`, mount阶段也是通过 **循环链表** 挂载所有的effect；更新阶段，通过对比依赖，如果没有更新，则打上 `NoHookEffect` flag, commit阶段会跳过该Effect
+    - useState & useReducer 的数据将挂载在 `FiberNode` 的 `memoizedState` 属性上；useEffect则挂载在 `FiberNode` 上的 `updateQueue` 上
 
 辅助链接：
 
