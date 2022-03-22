@@ -14,7 +14,7 @@
    - 详细的讲解了webpack插件系统依赖的 [Tapable](https://github.com/webpack/tapable) 库
    - Tapable钩子的几种类型：同步钩子 & 异步钩子
    - webpack中对不同钩子的使用情况
-   - Tapable动态变异的处理流程
+   - Tapable动态编译的处理流程
    - **构建一个插件体系需要的考虑的架构能力**
    - 对自定义webpack插件，理解Tapable是必须的
 
