@@ -17,6 +17,11 @@
    - Tapable动态编译的处理流程
    - **构建一个插件体系需要的考虑的架构能力**
    - 对自定义webpack插件，理解Tapable是必须的
+3. [分享几个 Webpack 实用分析工具 - 范文杰@掘金](https://juejin.cn/post/6960472347329429511)
+   - 几款常用的Webpack分析工具
+   - [webpack-dashboard](https://www.npmjs.com/package/webpack-dashboard) 美化terminal
+   - [Webpack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) 
+   - [UnusedWebpackPlugin ](https://www.npmjs.com/package/unused-webpack-plugin) 找出未使用的modules & sources
 
 
 
