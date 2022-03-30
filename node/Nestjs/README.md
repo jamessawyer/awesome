@@ -14,3 +14,12 @@
    - 介绍了nestjs IOC的实现原理，如何使用 `reflect-metadata` 库实现一个简易的依赖注入
    - 对装饰器模式使用理解
    - express库的简易实现，模拟实现express库各种APIs
+
+
+
+实战：
+
+1. [How to perform NestJS Config Validation? - @progressivecoder](https://progressivecoder.com/how-to-perform-nestjs-config-validation/)
+   - 如何使用 `Joi` 对 `@nestjs/config` 配置文件进行验证
+   - 如何结合 `class-transformer & class-validator` 自定义验证逻辑
+
