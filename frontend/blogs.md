@@ -11,3 +11,11 @@
 
 聚合
 1. [TeqNG](https://www.teqng.com/) 大厂精选文章
+
+
+
+
+
+
+播客：
+1. [The React Show](https://www.buzzsprout.com/1764837) React和js相关的博客
