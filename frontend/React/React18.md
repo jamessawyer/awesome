@@ -12,3 +12,4 @@
      - `unstable_useOpaqueIdentifier` 用于生成不同的id
      - `useDeferredValue` 类似debouce效果
 3. [🀄️React18面试 - bucuocuo@bilibili](https://www.bilibili.com/video/BV1rK4y137D3?p=1) 这个是一个中文视频，基本和上面的2的内容差不多
+   - [React18正式版源码级剖析](https://juejin.cn/post/7080854114141208612) 其实就是React18的一些新特性的简单介绍，但是文章中有一些特性类比还是不错的
