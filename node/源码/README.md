@@ -1,0 +1,2 @@
+nodejs一些libs源码：
+1. [这应该是最详细的《dotenv》源码分析 - 愣锤@掘金](https://juejin.cn/post/7080544982574039054) dovenv这个很简单的lib的源码解析，主要有2个方法 `config & parse`, 亮点是正则匹配去获取 `key & value`，以及多行配置是如何匹配的，最后将key & value 赋值到 `process.env` 上。
