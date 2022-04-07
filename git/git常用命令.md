@@ -403,3 +403,73 @@ git commit --amend
 可以参考：
 
 - [zsh自带的git aliases](https://blog.niclin.tw/2017/07/27/oh-my-zsh-%E8%87%AA%E5%B8%B6%E7%9A%84-git-aliases/)
+
+
+
+
+
+## 🚀 git worktree
+
+在本地多分支开发时，有可能当前分支有东西在修改，然后需要切到另外一个分支去操作，一般我们会使用 `git stash` 命令，比如：
+
+**假设当前分支在 dev, dev有文件没有提交，此时我们需要切换到master分支**
+
+```bash
+# dev 分支 保存到暂存区
+git stash
+
+# 切换到master
+git checkout master
+
+# master操作完成后，再切换到dev
+git checkout dev
+# 从暂存区中取出文件继续工作
+git stash pop
+```
+
+使用 `git worktree` 则会方便很多：假设我们的项目名称叫做 `worktree-demo`
+
+```bash
+# 在dev分支
+# 添加一个master worktree
+git worktree add ../master-branch master
+
+# 查看当前worktree列表
+git worktree list
+# 打印
+/Users/xxx/Documents/2022/worktree-demo  2b081ec [dev]
+/Users/xxx/Documents/2022/master-tree    2b081ec [master]
+
+# 切换到master分支 直接cd即可切换到master分支
+cd ../master-tree
+# 在master上进行操作
+echo 'file2 master' > file2.txt
+git add .
+git commit -m 'add file2 to master'
+
+# 修改完成后切换到 dev 分支 也是使用cd即可
+cd ../worktree-demo
+
+# 如果不需要worktree 可以将其移除
+git worktree remove master-tree
+```
+
+如果想要了解更多worktree命令，可以使用 `git worktree --help`
+
+```bash
+NAME
+       git-worktree - Manage multiple working trees
+
+SYNOPSIS
+       git worktree add [-f] [--detach] [--checkout] [--lock] [-b <new-branch>] <path> [<commit-ish>]
+       git worktree list [--porcelain]
+       git worktree lock [--reason <string>] <worktree>
+       git worktree move <worktree> <new-path>
+       git worktree prune [-n] [-v] [--expire <expire>]
+       git worktree remove [-f] <worktree>
+       git worktree repair [<path>...]
+       git worktree unlock <worktree>
+```
+
+
+
