@@ -1,0 +1,14 @@
+基础：
+
+1. [svg从入门到图标绘制和组件封装 - Alaso@掘金](https://juejin.cn/post/7075971584871104542)
+   - 画布和可见区域：画布可以理解为无限的绘制空间，而可见区域是能显示的画布中的某个范围（由svg中的 `width & height` 决定）
+   - `preserveAspectRatio` 来决定 `viewBox` 上的内容长宽上是等比放大（`meet`），还是缩放（`slice`）,还是保持长宽比进行拉伸，以便适应可见区域
+   - `use` & `g` & `defs` & `symbol` 标签的使用，如何进行svg的封装和重用
+   - `defs`: 内部元素不显示，但是可以使用 `use` 进行引用；`symbol` 可以用于设置 `viewBox`,注意这2者之间的区别
+2. [SVG中的Transform详解---平移、旋转和缩放- Alaso@掘金](https://juejin.cn/post/7078965147611430949)
+   - SVG 坐标系和HTML坐标系的差异
+   - transform中心点问题
+   - 示例：如何使用 viewBox 将可见区域中心点设置为画布的原点
+3. [⭐️⭐️ SVG动画从入门到实战，提升你的网站表现力 - Alaso@掘金](https://juejin.cn/post/7083262239569870856) 十分不错的svg动画技巧
+   - `stroke-dasharray` & `stroke-dashoffeset` 描边动画效果，进度条
+   - svg组件封装技巧
