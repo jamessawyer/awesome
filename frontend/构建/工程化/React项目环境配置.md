@@ -17,6 +17,12 @@ npx create-react-app my-app
 pnpm i -D -E prettier
 ```
 
+安装 [@trivago/prettier-plugin-sort-imports](https://github.com/trivago/prettier-plugin-sort-imports) 插件，用于import文件排序:
+
+```bash
+pnpm i -D @trivago/prettier-plugin-sort-imports
+```
+
 设置 `.prettierrc` & `.prettierignore`:
 
 ```bash
@@ -31,11 +37,14 @@ touch .prettierrc .prettierignore
   "tabWidth": 2,
   "semi": false,
   "singleQuote": true,
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
 ```
 
-配置 `。prettierignore` ：
+配置 `.prettierignore` ：
 
 ```tex
 build
