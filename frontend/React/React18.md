@@ -1,4 +1,17 @@
+:anguished: 基础：
+
+1. [React 18 超全升级指南 - MinJie@掘金](https://juejin.cn/post/7078511027091931167)
+   - 基本升级很平滑，API变动
+   - setState 批量处理问题 & `fluskSync` API，及其应用场景
+   - 新增API: `useSyncExternalStore` + `useInsertionEffect` + `useId` + `useTransition` + `useDeferredValue`
+   - 新增API示例
+
+
+
+
+
 ## 学习资料
+
 1. [what's new in React 18 - evening kid@youtube](https://www.youtube.com/watch?v=bpVRWrrfM1M&t=1s&ab_channel=eveningkid)
    - 简明的讲解了React18批量更新以及 `flushSync`
    - `Suspense` 的变化 & `startTransition` 手动定义任务优先级，避免动画卡顿等问题
