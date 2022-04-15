@@ -17,7 +17,7 @@
 
 
 
-实战：
+:gun: 实战：
 
 1. [Service Worker：让你的 Web 应用牛逼起来 - 前端进阶之旅@wx](https://mp.weixin.qq.com/s/Vj_Uw_QKTHrwuImC2nRt0A)
    - 先简单介绍了前端性能提升的几种方式：http缓存，浏览器缓存，service worker缓存
@@ -27,6 +27,11 @@
    - 本文介绍了如何测试页面性能得分：使用lighthouse工具
    - 分析性能指标：`FP | FCP | LCP | TTI | TBT`, 并以实际项目作为依据去提升这些指标的得分
    - 亮点：以vue项目为例使用异步加载组件的方式，利用 **分片加载（使用 `requestIdleCallback`）** 去加载和注册首屏不需要立马使用到的组件
+3. [🚀 得物App H5秒开优化实战 - 得物技术@掘金](https://juejin.cn/post/7086284339364757517)
+   - 多方面介绍了如何优化h5页面的加载速度，异常监控分析等，很有深度的一篇文章，有些地方实现细节还不是很明白，需要多看几遍
+   - 客户端（iOS & Android）优化： HTML预加载，HTML预请求，离线包的设计，接口预请求
+   - H5优化：SSR服务端渲染，预渲染HTML & CDN，css优化，图片优化
+   - 监控：使用 performance 进行性能指标上报，白屏监控，网络监控，异常监控
 
 
 
