@@ -34,3 +34,13 @@
 :book: 资源：
 
 1. [⭐️⭐️ 周末整理了这些 Nest.js 学习文章，先收藏着，空了再看！ - @wx](https://mp.weixin.qq.com/s/3Qy8CIlamr_GZhzBNb90hg)
+
+
+
+:tv: 视频:
+
+1. 全栈码叔的b站上的视频：
+   - [NestJS】后端服务框架入门](https://www.bilibili.com/video/BV1rP4y1u7BJ) 整体介绍了NestJS的架构，`中间件 -> 守卫 -> 前置拦截器 -> 管道 -> controllers -> 后置拦截器 ->Filters`
+   - [【NestJS】后端服务框架核心概念梳理](https://www.bilibili.com/video/BV1Bu411q77j) NestJS 核心概念简介
+   - [【NestJS】后端服务框架中的面向切面编程](https://www.bilibili.com/video/BV1w44y1K7kR) 守卫，拦截器示例
+
