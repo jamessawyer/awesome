@@ -143,13 +143,11 @@ pnpm-lock.yaml
   },
   "extends": [
     "airbnb",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:import/recommended",
+    "airbnb/hooks",
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "jest"],
+  "plugins": ["jest"],
   "rules": {
     "no-console": "off",
     "import/no-extraneous-dependencies": 0,
@@ -165,7 +163,10 @@ pnpm-lock.yaml
     "import/no-named-as-default": 0,
     "import/default": 0,
     "no-unused-vars": 1,
-    "no-plusplus": 0
+    "no-plusplus": 0,
+    "jsx-a11y/no-interactive-element-to-noninteractive-role": 0,
+    "jsx-a11y/click-events-have-key-events:": 0,
+    "jsx-a11y/no-static-element-interactions": 0
   },
   "parserOptions": {
     "sourceType": "module",
@@ -175,6 +176,13 @@ pnpm-lock.yaml
     },
     "babelOptions": {
       "configFile": "./.babelrc"
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   }
 }
