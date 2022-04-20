@@ -145,15 +145,12 @@ pnpm-lock.yaml
     "airbnb",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
+    "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "jest", "prettier"],
+  "plugins": ["react", "jest"],
   "rules": {
-    "prettier/prettier": ["error"],
     "no-console": "off",
     "import/no-extraneous-dependencies": 0,
     "react/jsx-filename-extension": [
@@ -232,7 +229,7 @@ npx husky add .husky/pre-commit "pnpm lint-staged"
 
 ```json
 {
-  "src/**/*.{js,json,jsx,json}": ["eslint"],
+  "src/**/*.{js,json,jsx}": ["eslint"],
   "src/**/*.{js,jsx,json,css,scss,md}": ["prettier --write ."]
 }
 ```
