@@ -102,10 +102,41 @@ touch .vscode/settings.json
 安装 eslint 相关依赖：
 
 ```bash
-pnpm i -D eslint eslint-config-airbnb eslint-config-prettier \
-	eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y \
-	eslint-plugin-react eslint-plugin-react-hooks
+pnpm i -D eslint eslint-config-prettier eslint-plugin-prettier \
+  eslint-config-airbnb eslint-plugin-import  eslint-plugin-jsx-a11y \
+	eslint-plugin-react eslint-plugin-react-hooks \
+	eslint-plugin-jest
 ```
+
+**:rotating_light: 值得注意的是 `eslint-config-airbnb` 包含了 `eslint-plugin-import & eslint-plugin-jsx-a11y & eslint-plugin-react & eslint-plugin-react-hooks` 等配置， 只有 `hooks` 需要额外配置一下，依次其配置如下**：
+
+```json
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks"
+    ...
+  ]
+}
+```
+
+**:rotating_light: `eslint-config-prettier` 使用prettier规则覆盖了和eslint冲突的部分配置, 再结合 `eslint-plugin-prettier`**,最终配置：
+
+```json
+{
+  "extends": [
+    ...
+    "plugin:prettier/recommended"
+  ]
+}
+```
+
+可以参考 
+
+- [搞懂 ESLint 和 Prettier - @知乎 ](https://zhuanlan.zhihu.com/p/80574300) 
+- [ESLint 和 Prettier 配合使用 - @csdn](https://blog.csdn.net/xs20691718/article/details/122727900)
+
+
 
 安装 babel 相关依赖：
 
@@ -257,7 +288,7 @@ npx husky add .husky/pre-commit "pnpm lint-staged"
 ```bash
 pnpm i -D sass stylelint stylelint-scss stylelint-prettier \
 	stylelint-config-standard-scss stylelint-config-prettier-scss \
-	postcss-scss
+	postcss-scss postcss@8
 ```
 
  配置 `.stylelintrc.js` & `.stylelintignore`:
@@ -274,9 +305,12 @@ module.exports = {
   extends: ['stylelint-config-standard-scss', 'stylelint-config-prettier-scss'],
   customSyntax: 'postcss-scss',
   rules: {
-    'prettier/prettier': true
+    'prettier/prettier': true,
+    'scss/at-import-partial-extension': ['always', , { except: ['scss'] }],
+    'no-empty-source': null // 是否允许空文件的存在
   }
 }
+
 ```
 
 `.stylelintignore`: 
@@ -284,7 +318,9 @@ module.exports = {
 ```
 # 其他类型文件
 *.js
+*.jsx
 *.ts
+*.tsx
 *.jpg
 *.woff
 
@@ -321,6 +357,10 @@ module.exports = {
 ```
 
 最后注意将项目中的css改为 `scss` 格式，虽然不改也可以，但是为了一致性，最好进行统一
+
+**:rotating_light: 为了避免 [TypeError: Class extends value undefined is not a constructor or null](https://github.com/stylelint-scss/stylelint-config-standard-scss/issues/5) 这个错误， 需要安装 `postcss v8+` 版本**
+
+
 
 
 
