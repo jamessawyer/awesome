@@ -21,14 +21,14 @@
    1. [Inside Fiber: in-depth overview of the new reconciliation algorithm in React - Max Koretskyi@In-depth-dev](https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react) 已翻译✅
    2. [The how and why on React’s usage of linked list in Fiber to walk the component’s tree - Max Koretskyi @in-depth-dev ](https://indepth.dev/posts/1007/the-how-and-why-on-reacts-usage-of-linked-list-in-fiber-to-walk-the-components-tree) 已翻译✅
    3. [In-depth explanation of state and props update in React - Max Koretskyi@in-depth-dev](https://indepth.dev/posts/1009/in-depth-explanation-of-state-and-props-update-in-react) 已翻译✅
-   
+
 2. 来自 [Mark's Dev Blog](https://blog.isquaredsoftware.com/) 的有关React渲染的文章
    1. [Mark's Dev Blog - A Mostly Complete Guide to React Rendering Behavior](https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/#improving-rendering-performance) 已翻译✅ React渲染指南
-   
+
 3. 🀄️ [魔术师卡颂](https://space.bilibili.com/453618117) 的系列文章，推荐学习 
    1. [React技术解密](https://react.iamkasong.com/)
    2. [魔术师卡颂 - b站视频](https://space.bilibili.com/453618117) 
-   
+
 4. 🀄️ [React-guidebook 关于Fiber和调度器部分](https://tsejx.github.io/react-guidebook/architect/internal/fiber)
 
 5. [pomb - build your own React](https://pomb.us/build-your-own-react/)：如果自己创建一个React库
@@ -82,14 +82,22 @@
 
       - 如果是事件捕获，则会从 `listeners` 后面开始执行，每次执行时都会判断是有存在 `isPropagationStopped()` 来终止事件的继续捕获
       - 如果是事件冒泡，则会从 `listeners` 最左边开始执行
+
+14. [🀄️ 阿里三面：灵魂拷问——有react fiber，为什么不需要vue fiber？ - 小李的前端小屋@wx](https://mp.weixin.qq.com/s/iM2RKUNHPZPPSwsYR6WkUA) 对React遍历和遍历完成顺序解释的很清楚
+
+    - 对比React & Vue响应式的差异：React依赖Fiber树结构；Vue则使用Proxy对数据劫持
+    - React & Vue重渲染的差异：React必须从Fiber树头到尾进行遍历，找出更新的Fiber节点，并形成Effect List;Vue则利用数据劫持，给组件添加监视器的形式
+    - React 新的Fiber数据结构，能中断渲染的原理：Fiber节点持有 `return & child & sibling` 链表数据结构，能够从中断的位置恢复
+    - React使用polyfill的 `requestIdleCallback` 函数，使用调度的方式，每次时间到了之后，就会让出渲染的控制权，将时间片交给更紧急的任务，这也是React能够中断渲染的原因
+    - **React遍历的顺序**：深度优先算法。遍历顺序是从顶至下，遍历完成顺序则是最底下没有子节点的，然后兄弟节点，没有兄弟节点则返回完成父节点，然后再兄弟节点的形式。
+
     
-      
 
-      
+    
 
-      
+    
 
-      
+    
 
 辅助链接：
 
