@@ -1,4 +1,4 @@
-## 基础概念
+## 👶 基础概念
 
 
 
@@ -21,7 +21,7 @@ lucifer的系列文章：
 
 
 
-## 高级概念
+## 👨‍💻‍ 高级概念
 
 1. [⭐️Ts高手篇：22个示例深入讲解Ts最晦涩难懂的高级类型工具 - 愣锤@掘金](https://juejin.cn/post/6994102811218673700?utm_source=gold_browser_extension#heading-8) 强烈推荐，高级类型的使用方式和原理，并自定义很多ts高级类型
 
@@ -69,17 +69,25 @@ lucifer的系列文章：
    1. [练习题讲解 Part1 - lucifier](https://segmentfault.com/a/1190000025157672)
    2. [练习题讲解 Part2 - lucifier](https://segmentfault.com/a/1190000037521679?utm_source=sf-similar-article)
 
-## 书籍和参考资料
+## 📚 书籍和参考资料
 
 1. [深入理解 TypeScript - 中文版](https://jkchao.github.io/typescript-book-chinese/)
 2. [Typescript Deep Dive - 英文原版](https://basarat.gitbook.io/typescript/)
 
 
 
-## 第三方工具
+## 📺 视频
+
+1. [🚀 typescript系列教程 - 阿宝哥聊技术@bilibili](https://www.bilibili.com/video/BV1RY411A7YS) 很简洁明了的教学方式
+2. [🔥 No BS TS - Jack Herringtong@youtube](https://www.youtube.com/watch?v=-TsIUuA3yyE&list=PLNqp92_EXZBJYFrpEzdO2EapvU0GOJ09n&index=2) 从入门到进阶，包含React + TS相关内容，以及 TS Design Patterns
+
+
+
+## 🔨 第三方工具
 
 
 
 1. [type-fest - @github](https://github.com/sindresorhus/type-fest) 封装了很多工具类型
 2. [piotrwitek/utility-type - @github](https://github.com/piotrwitek/utility-types) 在原生ts基础上补充了不少常用类型
 3. [ts-toolbelt - @github](https://github.com/millsp/ts-toolbelt) 很全的类型库
+3. [tsup - @github](https://github.com/egoist/tsup) 最简单和快捷打包TS库
