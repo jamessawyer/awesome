@@ -8,6 +8,12 @@
    - 二进制、Blob、Blob URL、Base64、Data URL、ArrayBuffer、TypedArray、DataView 和图片压缩
    - 切块上传大文件 & 下载数据
 2. [你不知道的 Blob - 阿宝哥](https://juejin.im/post/6844904178725158926)
+3. [🚀 Blob、File、ArrayBuffer、TypedArray、DataView究竟应该如何应用 - 19组清风@掘金](https://juejin.cn/post/7093908575935807502)
+   - 清晰的描述了js中的 `Blob` & `ArrayBuffer` 等类型
+   - `ArrayBuffer` 二进制类型，可以通过 `TypedArray | DataView` 对二进制进行操作
+   - `TypedArray` 不是具体类型，类似一种接口规范，包含 `UInt8Array | UInt16Array | Float32Array` 等等
+   - 通过 `new Blob(ArrayBuffer)` 可以将 ArrayBuffer 转换为 Blob 类型；然后通过 `FileReader.readAsArrayBuffer` 将 Blob 类型转换为 ArrayBuffer 类型
+   - 使用 `URL.createObjectUrl(blob)`, 可将 ArrayBuffer 类型转换为 Blob 类型
 
 
 
