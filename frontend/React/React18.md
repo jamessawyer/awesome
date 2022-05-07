@@ -10,7 +10,7 @@
 
 
 
-## 学习资料
+## 🎦 学习资料
 
 1. [what's new in React 18 - evening kid@youtube](https://www.youtube.com/watch?v=bpVRWrrfM1M&t=1s&ab_channel=eveningkid)
    - 简明的讲解了React18批量更新以及 `flushSync`
@@ -26,3 +26,4 @@
      - `useDeferredValue` 类似debouce效果
 3. [🀄️React18面试 - bucuocuo@bilibili](https://www.bilibili.com/video/BV1rK4y137D3?p=1) 这个是一个中文视频，基本和上面的2的内容差不多
    - [React18正式版源码级剖析](https://juejin.cn/post/7080854114141208612) 其实就是React18的一些新特性的简单介绍，但是文章中有一些特性类比还是不错的
+4. [🚀🚀 🀄️ 一次搞懂 React 18 到底更新了什么 - 骇客说@bilibili](https://www.bilibili.com/video/BV1US4y1P7CC) 关于React18讲的最清晰，简洁的一个视频
