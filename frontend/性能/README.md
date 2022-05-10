@@ -15,6 +15,24 @@
 
 
 
+🎉 tricks & Tips：
+
+1. [⭐️ Web Performance Trivia - Lydia Hallie@youtube](https://www.youtube.com/watch?v=8dB_TpSM8ak) 介绍几种常见的性能优化方式（顺便可以学一下chrome performance）
+   - `<script>` & `<script async>`  & `<script defer>` 区别
+     - `<script>` 阻塞式加载
+     - `<script async>` parse html的同时，会去加载 script, 加载完成后，执行script的过程又会阻塞parse过程; 如果有多个 async 加载，先加载完成的会先执行，因此如果scripts执行的顺序有关系，则不能使用这种方式
+     - `<script defer>` 在DOM创建完成之后执行，不会阻塞页面的parse
+   - `<link rel="prefetch">` & `<link rel="preload">` 
+     - `<link rel="prefetch">` 在后台获取资源，并将资源缓存起来
+     - `<link rel="preload">` 资源优先级比较高，需要提前获取，资源加载时间最后控制在 `3ms` 内
+   - `<img loading="lazy">` 懒加载图片
+   - 利用GPU渲染动画，使用 `Composite` Layer，避免不必要Layout shift；浏览器绘制过程： `Parsing` -> `Recalculating styles` -> `Layout` -> `Painting` -> `Composite`;利用chrome layer & Rendering 工具查看
+   - 使用 `Service Worker` & `Shared/Dedicated Worker` & `Worklet`
+
+
+
+
+
 
 
 :gun: 实战：
