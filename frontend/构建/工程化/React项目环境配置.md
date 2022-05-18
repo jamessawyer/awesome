@@ -258,10 +258,18 @@ Husky 版本 `7+`
 pnpm i -D husky lint-staged
 ```
 
-创建 `.husky` 配置文件夹：
+添加 `.husky/_` 文件：
 
 ```bash
-npx husky add .husky/pre-commit "pnpm lint-staged"
+npx husky install
+```
+
+
+
+添加 `.husky/pre-commit` 文件：
+
+```bash
+npx husky add .husky/pre-commit "npx --no-install lint-staged"
 ```
 
 定义 `.lintstagedrc` 文件：
@@ -272,6 +280,19 @@ npx husky add .husky/pre-commit "pnpm lint-staged"
   "src/**/*.{js,jsx,json,css,scss,md}": ["prettier --write ."]
 }
 ```
+
+设置 `package.json -> prepare` 脚本：
+
+```json
+{
+  "scripts": {
+    //....
+    "prepare": "husky install"
+  }
+}
+```
+
+
 
 可以参考：[How to use husky v6 with lint-staged? - @github issue](https://github.com/typicode/husky/issues/949#issuecomment-823807906)
 
@@ -484,7 +505,8 @@ indent_size = 2
     "lint": "eslint --fix \"./src/**/*.{js,jsx,json}\"",
     "prettier:fix": "prettier --write",
     "prettier:check": "prettier --check .",
-    "style": "stylelint \"src/**/*.(jsx|scss|css)\" --fix"
+    "style": "stylelint \"src/**/*.(jsx|scss|css)\" --fix",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
