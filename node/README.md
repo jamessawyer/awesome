@@ -35,3 +35,9 @@ lizhen的笔记：
 
 1. [程序员成长指北](http://www.inode.club/node/what.html#node-js-%E7%9A%84%E7%89%B9%E7%82%B9)
 
+
+
+## 🎉 外文Node周刊博客
+
+1. [⭐️ heynode](https://heynode.com/blog)
+
