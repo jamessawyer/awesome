@@ -1,5 +1,5 @@
 📁 package相关的工具：
-1. [💣 npm.devtool.tech](https://npm.devtool.tech/) 搜索包，对比包
+1. [💣 npm.devtool.tech](https://npm.devtool.tech/) 搜索包，对比包，同时打开控制台，可以直接在控制台中使用该搜索的依赖 🤩
 1. [packagephobia.com](https://packagephobia.com/) 包各个版本的体积
 1. [🔥 bundlephobia.com](https://bundlephobia.com/) 各个版本包体积 + 同类包对比
 
