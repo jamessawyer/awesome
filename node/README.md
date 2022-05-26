@@ -40,4 +40,5 @@ lizhen的笔记：
 ## 🎉 外文Node周刊博客
 
 1. [⭐️ heynode](https://heynode.com/blog)
+1. [arctype](https://arctype.com/blog/) 关于数据库 + node + docker等教程
 
