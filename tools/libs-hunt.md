@@ -13,6 +13,7 @@
 
 💯 各类包排行：
 
+1. [🔥🔥 openbase - 技术选型搜索和同类比对](https://openbase.com/)
 1. [😎 opensourcelibs.com](https://opensourcelibs.com/) 按字母排序包搜索
 2. [libhunt.com](https://www.libhunt.com/) 推荐各种语言优质库
 3. [libraries.io](https://libraries.io/) 和上面类似
