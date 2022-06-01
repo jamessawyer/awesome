@@ -42,3 +42,8 @@ lizhen的笔记：
 1. [⭐️ heynode](https://heynode.com/blog)
 1. [arctype](https://arctype.com/blog/) 关于数据库 + node + docker等教程
 
+
+
+## 📺 视频教程
+
+1. [🔥🔥 Node.js标准课程 - soloの前端星球@bilibili](https://space.bilibili.com/492148284/channel/collectiondetail?sid=434782&ctype=0) 非常优质的Node.js基础教程，简洁明了
