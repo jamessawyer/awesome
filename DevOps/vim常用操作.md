@@ -140,99 +140,63 @@ $
 - `e`: 移动到下一个单词的词尾，大写 `E` 以空格为界跳到单词的词尾
 - `b`: 移动到上一个单词词首，大写 `B` 以空格为界跳到单词词首
 
-🌰：（👇🏻 表示光标位置）下面例子都以这里光标位置作为起始位置
+🌰：（👇🏻 表示光标位置）下面例子都以这里光标位置作为起始位置 `var` 中 `a` 位置
+
+![vim-init-position](./imgs/vim-init-position.jpg)
 
 ```nginx
 user  nginx;
 worker_processes  auto;
-					  👇🏻
+            👇🏻
 error_log  /var/log/nginx/error.log notice;
 pid        /var/run/nginx.pid;
 ```
 
 1️⃣ 按 `w`: 跳到 `/` 位置，以单词作为划分
 
-```nginx
-user  nginx;
-worker_processes  auto;
-					    👇🏻
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-```
+![vim-jump-w](./imgs/vim-jump-w.jpg)
+
+
 
 按 `W`:(shift + w) 跳到下一个单词的词首（以空格为分界），即这里的 `n`
 
-```nginx
-user  nginx;
-worker_processes  auto;
-                                   👇🏻
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-```
+![vim-jump-w-c](./imgs/vim-jump-w-c.jpg)
+
+
 
 2️⃣ 按 `e`: 跳到单词尾, 即 `r` 的位置
 
-```nginx
-user  nginx;
-worker_processes  auto;
-					   👇🏻
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-```
+![vim-jump-e](./imgs/vim-jump-e.jpg)
+
+
 
 按 `E`: 跳到以空格为分界的词尾，即 `g` 的位置
 
-```nginx
-user  nginx;
-worker_processes  auto;
-                                  👇🏻
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-```
+![vim-jump-e-c](./imgs/vim-jump-e-c.jpg)
+
+
 
 3️⃣ 按 `b`: 跳到上一个单词词首 `v` 位置
 
-```nginx
-user  nginx;
-worker_processes  auto;
-					 👇🏻
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-```
+![vim-jump-b](./imgs/vim-jump-b.jpg)
+
+
 
 按 `B`: 跳到上一个单词词首，以空格作为分界
 
-```nginx
-user  nginx;
-worker_processes  auto;
-					👇🏻
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-```
+![vim-jump-b-c](./imgs/vim-jump-b-c.jpg)
 
 
 
 🔥 另外和复制一样支持 `数字 + w | 数字 + W` 这种形式，一次性跳转几个单词：
 
-```nginx
-user  nginx;
-                 👇🏻
-worker_processes  auto;
-					
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-```
+![vim-jump-4-W](./imgs/vim-jump-4-W.jpg)
+
+
 
 按 `4W`: 跳转4个单词，到 `n` 位置
 
-```nginx
-user  nginx;
-                 
-worker_processes  auto;
-                                   👇🏻
-error_log  /var/log/nginx/error.log notice;
-pid        /var/run/nginx.pid;
-```
+![vim-jump-4-W-r](./imgs/vim-jump-4-W-r.jpg)
 
 
 
