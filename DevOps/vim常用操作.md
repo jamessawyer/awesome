@@ -165,7 +165,7 @@ pid        /var/run/nginx.pid;
 ```nginx
 user  nginx;
 worker_processes  auto;
-					                         👇🏻
+                                   👇🏻
 error_log  /var/log/nginx/error.log notice;
 pid        /var/run/nginx.pid;
 ```
@@ -185,7 +185,7 @@ pid        /var/run/nginx.pid;
 ```nginx
 user  nginx;
 worker_processes  auto;
-					                       👇🏻
+                                  👇🏻
 error_log  /var/log/nginx/error.log notice;
 pid        /var/run/nginx.pid;
 ```
@@ -223,13 +223,13 @@ error_log  /var/log/nginx/error.log notice;
 pid        /var/run/nginx.pid;
 ```
 
-按 `4W`: 跳转4个单词
+按 `4W`: 跳转4个单词，到 `n` 位置
 
 ```nginx
 user  nginx;
                  
 worker_processes  auto;
-					                         👇🏻
+                                   👇🏻
 error_log  /var/log/nginx/error.log notice;
 pid        /var/run/nginx.pid;
 ```
