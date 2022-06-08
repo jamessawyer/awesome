@@ -8,6 +8,21 @@ VSCode 插件： [eslint](https://marketplace.visualstudio.com/items?itemName=db
 npx create-react-app my-app
 ```
 
+目录：
+
+1. [配置 Prettier](#1)
+2. [配置 ESLint & Babel](#2)
+3. [配置 Husky & lint-staged](#3)
+4. [配置stylelint](#4)
+5. [配置EditorConfig](#5)
+6. [部分配置文件完整列表](#6)
+
+
+
+<p id="1"></p>
+
+
+
 ## :one: 配置 Prettier
 
 安装依赖：
@@ -96,6 +111,12 @@ touch .vscode/settings.json
   "prettier:check": "prettier --check ."
 }
 ```
+
+
+
+<p id="2"></p>
+
+
 
 ## :two: 配置 ESLint & Babel
 
@@ -254,6 +275,12 @@ touch .babelrc
 - 它不会直接的修复错误，而是列举出来格式错误的位置
 - 另外可以用这个命令去查看 `.eslintrc` 配置是否存在错误，比如某些扩展，插件安装不正确，它都会进行提示 🚀
 
+
+
+<p id="3"></p>
+
+
+
 ## :three: 配置 Husky & lint-staged
 
 Husky 版本 `7+`
@@ -305,6 +332,10 @@ npx husky add .husky/pre-commit "npx --no-install lint-staged"
 另外还可以配置 `@commitlint/config-conventional`， 这里就没有配置了。
 
 
+
+
+
+<p id="4"></p>
 
 
 
@@ -401,6 +432,12 @@ module.exports = {
 
 
 
+
+
+<p id="5"></p>
+
+
+
 ## :five: 配置EditorConfig
 
 参考 [editorconfig](https://editorconfig.org/) :
@@ -444,6 +481,10 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 ```
+
+
+
+<p id="6"></p>
 
 
 
