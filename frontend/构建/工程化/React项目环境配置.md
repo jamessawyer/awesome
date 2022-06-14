@@ -344,7 +344,7 @@ npx husky add .husky/pre-commit "npx --no-install lint-staged"
 安装依赖：
 
 ```bash
-pnpm i -D sass stylelint stylelint-scss stylelint-prettier \
+pnpm i -D sass stylelint \
 	stylelint-config-standard-scss stylelint-config-prettier-scss \
 	postcss-scss postcss@8
 ```
@@ -359,11 +359,9 @@ touch .stylelintrc.js .stylelintignore
 
 ```js
 module.exports = {
-  plugins: ['stylelint-scss', 'stylelint-prettier'],
   extends: ['stylelint-config-standard-scss', 'stylelint-config-prettier-scss'],
   customSyntax: 'postcss-scss',
   rules: {
-    'prettier/prettier': true,
     'scss/at-import-partial-extension': ['always', , { except: ['scss'] }],
     'no-empty-source': null // 是否允许空文件的存在
   }
