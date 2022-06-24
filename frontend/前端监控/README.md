@@ -13,4 +13,9 @@
 5. [实现一个系统，统计前端页面性能、页面 JS 报错、用户操作行为、PV/UV、用户设备等消息，并进行必要的监控报警。方案如何设计，用什么技术点，什么样的系统架构，难点会在哪里 - @github](https://github.com/lgwebdream/FE-Interview/issues/1215)
    - 讲的是定制化前端监控方案的大体实现
    - 对比日志上传的几种不同方案：即时上报，批量上报，区块上报（针对异常情况），用户主动上报（用户反馈）
+6. [在页面关闭时，前端上传监控数据的4个解决方案 - 高阶前端进阶@wx](https://mp.weixin.qq.com/s/sLnP6JK0Y_-KKh6XgdbiDA)
+   - XMLHttpRequest 老版浏览器支持，已废弃 🚫
+   - `img.src=api.xxx?yourdata`： 传输不可靠，只能 `GET` 请求，数据大小有限制
+   - `navigator.sendBeacon`: 兼容性好，只能发送 `POST` 请求，大小有限制 🎉
+   - `fetch keepalive`：允许页面卸载后执行，兼容性有问题
 
