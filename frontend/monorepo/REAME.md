@@ -1,0 +1,23 @@
+好文推荐：
+  1. [🎉 monorepo.tools](https://monorepo.tools/) monorepo综合性介绍
+     - 什么是monorepo?
+     - monorepo的特点
+     - monorepo工具需要具备的能力的3个维度：性能，可理解性，管理
+     - 性能
+       - 本地计算缓存
+       - 本地任务编排
+       - 分布式计算缓存
+       - 分布式任务执行
+       - 透明远程执行
+       - 检测受影响的项目和packages
+     - 可理解性
+       - workspace分析
+       - 依赖图可视化
+     - 管理
+       - 代码共享
+       - 一致性工具
+       - 代码生成
+       - 项目约束和可见性
+     - 😎市场上的monorepo工具：Bazel，Gradle，Lage，Lerna，Nx，Pants，Rush，Turporepo
+     - 从上面3个维度对工具进行对比
+     - monorepo相关文章，博客分享
