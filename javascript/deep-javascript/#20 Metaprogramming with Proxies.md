@@ -14,7 +14,7 @@
 4. [Use cases for Proxies](#4)
    1. [Tracing property accesses(get, set)](#4.1)
    2. [Warning about unknown properties(get, set)](#4.2)
-   3. [Negative Array iindices(get)](#4.3)
+   3. [Negative Array indices(get)](#4.3)
    4. [Data binding(set)](#4.4)
    5. [Accessing a restful web service(method calls)](#4.5)
    6. [Revocable references](#4.6)
