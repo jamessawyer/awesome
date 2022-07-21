@@ -21,3 +21,10 @@ React资源 + libs：
 
 1. [用React Portals在React中构建模态 - 迪鲁宾@掘金](https://juejin.cn/post/7067793893340741640) 介绍如何使用 `createPortal` 创建常见的Modal，以及使用 `CSSTransition` 添加modal动画
 
+
+
+
+
+🔊 播客：
+
+1. [The React Show](https://www.buzzsprout.com/1764837)
