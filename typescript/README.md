@@ -97,3 +97,22 @@ lucifer的系列文章：
 ## 🔫 实战
 
 1. [🔥🔥🀄️ type-challenges - @github](https://github.com/type-challenges/type-challenges) 类型挑战，各种类型的实现挑战
+
+
+
+## 🚀 设计模式
+
+1. [😎 TypeScript装饰器完全指南](https://saul-mirone.github.io/zh-hans/a-complete-guide-to-typescript-decorator/)
+   - 装饰器的用法
+   - 各种类型的装饰器：类，类属性，类方法，类访问器，类方法参数
+   - 装饰器的执行顺序和时机
+   - 多个装饰器组合，以及调用顺序
+   - 各种装饰器的写法，比如方法装饰器会用到属性描述器
+   - 装饰器的用处：
+     - 实现 `AOP`，方法前后插入自定义逻辑
+     - 监听属性的改变或者方法的调用（结合代理或反射）
+     - 对方法参数进行转换或者校验
+     - 运行时类型检测
+     - 添加额外的方法和属性
+     - 依赖注入
+   - 可以学习一下 [Angular](https://github.com/angular/angular) & [NestJS](https://github.com/nestjs/nest) & [reflect-metadata](https://github.com/rbuckton/reflect-metadata) 中装饰器的写法
