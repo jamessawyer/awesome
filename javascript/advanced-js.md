@@ -42,3 +42,17 @@
    - 使用 `video` 元素捕获画面，然后使用canvas对画面中的二维码绘制，然后转换成ImageData数据格式
    - 使用 `jsQR` lib对上面的数据进行解析，获取二维码数据
    - 该教程使用vuejs实现，但是原理是通用的
+
+
+## 5. 沙箱
+
+1. [【万字长文】一文带你打通前端沙箱的"任督二脉" - 战场小包@掘金](https://juejin.cn/post/7124969690958397471)
+   - 介绍了各种沙箱方法
+   - 从最简单的 `IIFE` & `eval` & `eval + with` & `with + new Function()` 讲起，介绍各种方法的限制
+   - 然后介绍 `with + new Function() + Proxy` 引入代理，存在的缺点，任意使用全局变量，沙箱逃逸问题的出现
+   - 快照沙箱 `SnapshotSandbox` 方案，通过 `active` & `inactive` 打开和关闭沙箱，开关的时候对沙箱或window进行还原，存在问题是需要对window进行遍历，性能较差，另外也会污染widnow对象
+   - 基于Proxy的单例沙箱 `LegacySandbox`，整体思想就是用多个变量记录变量的新增和修改，然后进行还原，不通过遍历window属性方式性能较好，但是还是会污染window对象
+   - 基于Proxy的多例沙箱 `ProxySandbox`，可以生成多个沙箱环境，目前为止最好的一种方式
+   - iframe隔离，以及其存在的一些问题
+   - EACMScript新的提案解决沙箱问题：`ShadowRealm`
+
