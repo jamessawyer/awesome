@@ -91,6 +91,168 @@
     - React使用polyfill的 `requestIdleCallback` 函数，使用调度的方式，每次时间到了之后，就会让出渲染的控制权，将时间片交给更紧急的任务，这也是React能够中断渲染的原因
     - **React遍历的顺序**：深度优先算法。遍历顺序是从顶至下，遍历完成顺序则是最底下没有子节点的，然后兄弟节点，没有兄弟节点则返回完成父节点，然后再兄弟节点的形式。
 
+15. [👍 Why React Re-Renders - Josh Comeau](https://www.joshwcomeau.com/react/why-react-re-renders/) 
+
+    - 很基础，并通俗易懂的一篇文章
+    - React重新渲染的唯一触发条件：`状态改变`
+    - 组件状态更改会导致组件和后代组件（如果存在的话）重新渲染，因为单向数据流，父组件是不会受到影响的
+    - 后代组件的重渲染，和属性没有关系，因为组件默认对整颗子树进行重渲染
+    - `React.memo` 和 `React.PureComponent` 的作用在于，告诉React该组件是一个纯组件，即使父组件的状态变化，而传入的属性(`props`)没有发生变化的话，就不需要重渲染该组件了
+    - 可以把 `Context` 理解为一种 `不可见` | `内部的` 依赖，但状态发生变化时，也会触发使用到了Context的组件的重渲染
+    - 😎如何使用 React DevTools 的 `Profiler` 工具定位组件重渲染的原因，以及高亮重渲染组件
+
+16. [👍 Understanding useMemo and useCallback](https://www.joshwcomeau.com/react/usememo-and-usecallback/) 终于有一篇文章能将 `useMemo` & `useCallback` 的作用已经使用场景写得这么直白了🎉
+
+    - `useMemo` & `useCallback` 都可用于 `记忆` 对象，`useMemo` 用于记忆 `arrays & objects`; 而 `useCallback` 用于记忆 `functions`（函数也是对象）
+
+    - `useCallback` 是 `useMemo` 的语法糖，底层实际也是使用的 `useMemo`
+
+    - `React.memo` vs `useMemo` : `React.memo` 是对整个组件进行包裹，对传入的属性进行比较；`useMemo` 对组件内局部对象进行记忆
+
+    - React性能优化的2个方式
+
+      - 减少每次渲染的工作量
+      - 减少组件渲染的次数
+
+    - `useMemo` 用于记忆对象，可以用于减少每次渲染的工作量。比如，组件内存在2个状态：`A` & `B`，其中 `B` 比较耗时，这时就可能 `B` 进行记忆，这样`A`发生变化时，不用重新去计算 `B`
+
+      - 但是我们不一定需要使用 `useMoemo` ，我们可以通过 **状态分离** 的方式，将包含 `A` 状态部分写成一个独立的组件 `A`，包含 `B` 状态部分也单独写成一个独立的组件 `B`，使用 `React.memo` 对整个组件进行包裹；这样，`A` 组件的变化，就不会再影响到 `B` 组件了
+
+    - `useMemo` 的另一个作用就是，对对象进行记忆，例如：每次 `App` 组件因为 `name`状态发生变化重新渲染时，都会生成一个全新的对象 `boxes`，因为对象属性通过引用比较，这导致每次传入 `Boxes` 组件的属性都是一个新的对象，因此 `Boxes` 组件每次都会重新渲染🚀
+
+      ```jsx
+      import React from 'react';
+      import Boxes from './Boxes';
+      
+      function App() {
+        const [name, setName] = React.useState('');
+        const [boxWidth, setBoxWidth] = React.useState(1);
+        
+        const id = React.useId();
+        
+        // 🚨 改变 `name` 状态，App都会重渲染，每次都生成一个新的boxes对象
+        // 从而导致 Boxes 组件每次接收到的对象属性都是不同的属性，继而导致 Boxes 组件的重新渲染
+        const boxes = [
+          { flex: boxWidth, background: 'hsl(345deg 100% 50%)' },
+          { flex: 3, background: 'hsl(260deg 100% 40%)' },
+          { flex: 1, background: 'hsl(50deg 100% 60%)' },
+        ];
+        
+        return (
+          <>
+            <Boxes boxes={boxes} />
+            
+            <section>
+              <label htmlFor={`${id}-name`}>
+                Name:
+              </label>
+              <input
+                id={`${id}-name`}
+                type="text"
+                value={name}
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+              />
+              <label htmlFor={`${id}-box-width`}>
+                First box width:
+              </label>
+              <input
+                id={`${id}-box-width`}
+                type="range"
+                min={1}
+                max={5}
+                step={0.01}
+                value={boxWidth}
+                onChange={(event) => {
+                  setBoxWidth(Number(event.target.value));
+                }}
+              />
+            </section>
+          </>
+        );
+      }
+      
+      ```
+
+      改进版本：
+
+      ```jsx
+      import React from 'react';
+      
+      import Boxes from './Boxes';
+      
+      function App() {
+        const [name, setName] = React.useState('');
+        const [boxWidth, setBoxWidth] = React.useState(1);
+        
+        const id = React.useId();
+        
+        // 🎉 使用 useMemo 对对象进行缓存，这样App每次重渲染时，都使用缓存的对象
+        const boxes = useMemo(() => ([
+          { flex: boxWidth, background: 'hsl(345deg 100% 50%)' },
+          { flex: 3, background: 'hsl(260deg 100% 40%)' },
+          { flex: 1, background: 'hsl(50deg 100% 60%)' },
+        ]), [boxWidth]);
+        
+        return (
+          <>
+            <Boxes boxes={boxes} />
+            
+            <section>
+              <label htmlFor={`${id}-name`}>
+                Name:
+              </label>
+              <input
+                id={`${id}-name`}
+                type="text"
+                value={name}
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+              />
+              <label htmlFor={`${id}-box-width`}>
+                First box width:
+              </label>
+              <input
+                id={`${id}-box-width`}
+                type="range"
+                min={1}
+                max={5}
+                step={0.01}
+                value={boxWidth}
+                onChange={(event) => {
+                  setBoxWidth(Number(event.target.value));
+                }}
+              />
+            </section>
+          </>
+        );
+      }
+      ```
+
+    - `useCallback` 则是对 `函数对象` 进行缓存，它是 `useMemo` 的语法糖
+
+      ```jsx
+      // This: 直接使用函数
+      React.useCallback(function helloWorld(){}, []);
+      
+      // 等价于 返回一个函数对象
+      // ...Is functionally equivalent to this:
+      React.useMemo(() => function helloWorld(){}, []);
+      ```
+
+    - 👩‍🏫 但是要记住的是，不要对性能过度的优化，因为React已经做的很好了，因此这2个hooks的使用场景
+
+      - 通用的自定义hooks中，因为自定义的hooks可能被使用很多次，进行记忆缓存有可能带来性能的提升
+      - `Context Provider` 中，因为可能有很多纯函数消费该context，使用 `useMemo` | `useCallback` 会减少纯组件的渲染可能性
+
+    
+
+    
+
+    
+
     
 
     
