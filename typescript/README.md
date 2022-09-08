@@ -61,6 +61,20 @@ lucifer的系列文章：
       api('/user').then(res => res.)
       ```
 
+3. [Vue3 跟着尤雨溪学 TypeScript 之 Ref 类型从零实现 - ssh_晨曦时梦见兮@掘金](https://juejin.cn/post/6844904126283776014)
+
+   1. 如何实现vue3中的 `Ref` 类型，然后以此展开的TS一些高级概念，文章由浅入深👍
+   2. 泛型的反向推导 `function create<T>(val: T): T` -> `const c = create(10)` 反向推导出 `c` 的类型为 `number`
+   3. 索引签名 `type Test = { foo: number }` -> `Test['foo']` 是 `number` 类型
+   4. 条件类型，这个和js的三元表达式类似， `type IsNumber<T> = T extends number ? 'yes' : 'no'` -> `IsNumber<2>` 得到 `'yes'`
+   5. `keyof` 获取对象的keys，对对象进行遍历，类似  `Object.keys(obj)`
+   6. ⭐ `infer` 关键词的用法，用于对类型进行占位，只能用在 `extends` 语句后， `type Get<T> = T extends infer R ? R : never` -> `type X = Get<number>` 得到 `type X = number`
+   7. vue3 `ref` 的原理和基本用法
+   8. 如何利用上面的知识，对 `Ref` 类型进行递归，得到最内层的类型。
+   9. `UnwrapRef` 的作用就是递归的核心，随着TS版本的提示，可以直接使用 `type UnwrapRef<T> = T extends Ref<infer R> ? UnwrapRef<R> : T`
+
+
+
 
 
 看完上面的文章后可以尝试做一下下面的练习题进行巩固：
