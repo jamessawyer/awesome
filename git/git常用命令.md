@@ -392,7 +392,7 @@ git branch -m new_branch_name
 有时候在 **`git commit -m 'xxx'`** 提交的消息写得不是很好，想要修改该提交信息，可以使用
 
 ```bash
-git commit --amend
+git commit --amend -m '新xxx'
 ```
 
 
