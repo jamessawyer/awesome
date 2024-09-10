@@ -62,7 +62,7 @@ NodeJS中几种最常见的可读流是：
 
 ### 1.3 Duplex Stream
 
-正如上面提到的，双工流是可读流和可写流的混合体。一个连接双工流的应用，能工同时在双工流中读和写。最常见的双工流就是  [net.Socket](http://nodejs.cn/api/net.html#net_class_net_socket)。在双工流中，读和写是独立的部分，它们都各自拥有自己的buffers:
+正如上面提到的，双工流是可读流和可写流的混合体。一个连接双工流的应用，能够同时在双工流中读和写。最常见的双工流就是  [net.Socket](http://nodejs.cn/api/net.html#net_class_net_socket)。在双工流中，读和写是独立的部分，它们都各自拥有自己的buffers:
 
 ![Duplex Stream](./imgs/Duplex_Stream.png)
 
@@ -92,7 +92,7 @@ NodeJS中几种最常见的可读流是：
 
 > Copying Data with Streams
 
-管道的另一个有趣的地方就是，可以将同一个流使用管道多次连接起来，这对需要2次读取相同流的情况很有用，因为在另一个消费者完全读取后，您无法再次从可读流中读取。然而，通过管道多次读取可读流，多个消费者可以通过从原始可读流复制数据来读取同一个流。
+管道的另一个有趣的地方就是，可以将同一个流使用管道多次连接起来，这对需要2次读取相同流的情况很有用，因为在另一个消费者完全读取后，你无法再次从可读流中读取。然而，通过管道多次读取可读流，多个消费者可以通过从原始可读流复制数据来读取同一个流。
 
 下面的简单示例中，我们拷贝2次 `original.txt` 文件：
 
@@ -135,9 +135,9 @@ original.pipe(copy2)
 
 ## 3. 小结
 
-目前我们套路拿了不同类型的流，以及如何使用它们，下面对其进行可视化小结。
+目前我们看到了不同类型的流，以及如何使用它们，下面对其进行可视化小结。
 
-下面是一个简单图片服务的设计。在这个服务中，图片从S3 bucket取回，然后作为一个可变尺寸的图片提供给终端用户：
+下面是一个简单图片服务的设计。在这个服务中，图片从S3 bucket取回，然后生成一个可变尺寸的图片提供给终端用户：
 
 ![resize image](./imgs/resize_image.png)
 
@@ -147,7 +147,7 @@ original.pipe(copy2)
 
 因为来自S3 bucket的数据流是一种可读流，我们可以以某种方式通过管道将其和一个用于转换图片尺寸的转换流连接起来。因为转换流也是可读的，我们可以直接将其通过管道传输到响应流，以便调整来自 S3 bucket的数据块的大小并将其发送给用户，而无需等待来自 S3 bucket的整个文件
 
-![pipe stream real example](./imgs/pipe stream real example.png)
+![pipe stream real example](./imgs/pipe_stream_real_example.png)
 
 
 
