@@ -49,7 +49,7 @@ js语言并没有多线程的功能。因此Node.js的工作线程和其它语�
 
 
 
-![Message Channel between the parent and the child workers](./imgs/Message Channel between the parent and the child workers.png)
+![Message Channel between the parent and the child workers](./imgs/Message_Channel_between_the_parent_and_the_child_workers.png)
 
 (**消息通道是一种简单的通信通道，它有2个端，被称之为端口`ports`。在Node.js中，消息通道的2端被定义为 `port1 & port2`**)
 
@@ -76,7 +76,7 @@ Worker 实现使用 `worker_threads`  模块暴露给用户态 JavaScript 脚本
 
 如下图所示：
 
-![Worker Implementation Internals](./imgs/Worker Implementation Internals.png)
+![Worker Implementation Internals](./imgs/Worker_Implementation_Internals.png)
 
 基于此，可将worker的设置过程划分为2个阶段：
 
@@ -218,7 +218,7 @@ Node.js 工作线程池是一组正在运行的工作线程，可用于传入任
 
 正如我们第一眼看到的，随着工作负载的增加，使用线程池的开销显着降低：
 
-<img src="./imgs/How efficient is it to use worker_threads.png" alt="How efficient is it to use worker_threads" style="zoom:50%;" />
+<img src="./imgs/How_efficient_is_it_to_use_worker_threads.png" alt="How efficient is it to use worker_threads" style="zoom:50%;" />
 
 但是，写这篇文章的时候（2019-12-23），Node.js并没有自身提供线程池的功能，因此，你可能需要依赖第三方的实现或者你自己实现一个线程池。
 

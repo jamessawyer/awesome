@@ -107,7 +107,7 @@ app.listen(3000)
 
 掌握了这些信息后，我们的回响服务器可以用下图表示：
 
-![echo Socket server](./imgs/echo Socket server.png)
+![echo Socket server](./imgs/echo_Socket_server.png)
 
 在这个回响服务中，我们简单的将 `req` 可读流通过管道连接到 `res` 可写流中，因此请求body内容再次返回到客户端中。
 
@@ -140,7 +140,7 @@ reader.pipe(writer2)
 
 
 
-![Pipe Stream example](./imgs/Pipe Stream example.png)
+![Pipe Stream example](./imgs/Pipe_Stream_example.png)
 
 尽管这是一个很简单的例子，但是多管道在实际应用中是十分有用的。比如，在http服务中，你想将进来的请求代理到上游的服务器的同时，将请求的内容用于日志和监控。
 
@@ -183,7 +183,7 @@ app.listen(3000)
 
 
 
-![hash server](./imgs/hash server.png)
+![hash server](./imgs/hash_server.png)
 
 下面试着理解上图的流程的含义：
 

@@ -37,7 +37,7 @@
 
 一个可读流可用于从底层源（比如 `file descriptor`） 读取数据。如果应用使用到的数据速度比操作系统读取的数据要慢，可以使用 [Buffer](https://nodejs.org/api/stream.html#stream_buffering) 对数据进行缓存:
 
-![Readable stream](./imgs/Readable stream.png)
+![Readable stream](./imgs/Readable_stream.png)
 
 NodeJS中几种最常见的可读流是：
 
@@ -51,7 +51,7 @@ NodeJS中几种最常见的可读流是：
 
 一个可写流用于从应用中写数据到特定的目的地。在目的地比写入应用程序慢的情况下，为了防止数据丢失或目的地过载，数据可以存储在内部 [Buffer](https://nodejs.org/api/stream.html#stream_buffering)  中:
 
-![Writable Stream](./imgs/Writable Stream.png)
+![Writable Stream](./imgs/Writable_Stream.png)
 
 你平时最常用的可写流，可能就是 [process.stdout](https://nodejs.org/api/process.html#process_process_stdout), `console.log` 底层就是用到的它，除了它以外，另外2个最常见的写入流是：
 
@@ -64,7 +64,7 @@ NodeJS中几种最常见的可读流是：
 
 正如上面提到的，双工流是可读流和可写流的混合体。一个连接双工流的应用，能工同时在双工流中读和写。最常见的双工流就是  [net.Socket](http://nodejs.cn/api/net.html#net_class_net_socket)。在双工流中，读和写是独立的部分，它们都各自拥有自己的buffers:
 
-![Duplex Stream](./imgs/Duplex Stream.png)
+![Duplex Stream](./imgs/Duplex_Stream.png)
 
 
 
@@ -72,7 +72,7 @@ NodeJS中几种最常见的可读流是：
 
 转换流也是特殊的混合体，它的可读部分以某种方式连接到它的可写部分。最常见的形式，可能是 **`Cipher`** 类创建的加密流（crypto stream）。这种形式中，应用将普通数据写入流中，然后从相同的流中读取加密后的数据:
 
-![Transform Stream](./imgs/Transform Stream.png)
+![Transform Stream](./imgs/Transform_Stream.png)
 
 
 
@@ -84,7 +84,7 @@ NodeJS中几种最常见的可读流是：
 
 在很多情形下，将多个流连接起来会更有用。我们称之为 **管道 （`piping`）**。你可以将一个可读流使用可读流提供的 **`pipe()`** 方法将其连接到另一个可写流或者双工流或者转换流上：
 
-![Piping Stream](./imgs/Piping Stream.png)
+![Piping Stream](./imgs/Piping_Stream.png)
 
 比较常见的一个例子就是，将 `fs.createReadStream()` 和 `fs.createWriteStream()` 通过管道连接起来，实现将文件从一个地方拷贝到另一个地方的功能。
 
@@ -109,7 +109,7 @@ original.pipe(copy2)
 
 上面示例，用图形表示如下：
 
-![Pipe Stream example](./imgs/Pipe Stream example.png)
+![Pipe Stream example](./imgs/Pipe_Stream_example.png)
 
 
 
@@ -119,7 +119,7 @@ original.pipe(copy2)
 
 如果我们能 **检测** 正在发生什么，从而让上流的水停止注入呢？我们可以标记水箱的最高面，当水流当道水箱的最高面时，要求上流停止继续注水。
 
-<img src="./imgs/tank with high mark.png" alt="tank with high mark" style="zoom:50%;" />
+<img src="./imgs/tank_with_high_mark.png" alt="tank with high mark" style="zoom:50%;" />
 
 
 
@@ -127,7 +127,7 @@ original.pipe(copy2)
 
 举个例子，当一个可读流连接一个可写流时，当可写流的缓存超过 `highWaterMark`时， 可写流能够要求可读流停止读取数据
 
-<img src="./imgs/read stream and write stream.png" alt="read stream and write stream" style="zoom:50%;" />
+<img src="./imgs/read_stream_and_write_stream.png" alt="read stream and write stream" style="zoom:50%;" />
 
 然而 `highWaterMark` 不是一个硬性的限制，而只是一个阈值，但是在构建自定义流时遵守该阈值很重要，以避免数据丢失或不受欢迎的内存使用。
 
@@ -139,7 +139,7 @@ original.pipe(copy2)
 
 下面是一个简单图片服务的设计。在这个服务中，图片从S3 bucket取回，然后作为一个可变尺寸的图片提供给终端用户：
 
-![resize image](./imgs/resize image.png)
+![resize image](./imgs/resize_image.png)
 
 如果我们不使用流，我们将整个文件从S3 bucket中获取，然后将其保留到内存中，一次性的调整图片的尺寸，然后将调整好的尺寸发送给用户。
 
