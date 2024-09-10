@@ -65,7 +65,7 @@ stream closed!
 7. 一旦数据从流中完成读取，流会触发 **`end`** 事件，用于表示流中没有需要被读取的数据了
 8. 最后，操作系统关闭底层文件，`close` 事件被触发
 
-依据可读流的目的，也可能触发一些实现相关的自定义时间。这个例子中，虽然我们只看到了可读流不同阶段，但是 `flowing & paused` 模式在可读流中是通用的。
+依据可读流的目的，也可能触发一些实现相关的自定义事件。这个例子中，虽然我们只看到了可读流不同阶段，但是 `flowing & paused` 模式在可读流中是通用的。
 
 
 
@@ -103,7 +103,7 @@ app.listen(3000)
 然而，NodeJS的 `http` 模块基于TCP sockets的基础上提供了更多的功能，暴露了2个分开的用于读socket和写socket的流：
 
 1. [IncomingMessage](http://nodejs.cn/api/http.html#http_class_http_incomingmessage): 来自socket的可读流。在上面例子中，可以在request handler中通过 `req` 对象访问到该流。NodeJS的 `http` 模块从socket中读取进来的请求内容，然后将其推送到 `IncomingMessage` 可读流中。
-2. [OutgoingMessage](http://nodejs.cn/api/http.html#http_class_http_outgoingmessage): 到socket的可写流。在上面例子中，可以在request handler中通过 `res` 对象访问到该流。NodeJS的 `http` 模块将写入 `OutgoingMessage`  可写流的数据传递给套接字流。这个数据然后被写入到由操作系统创建的实际的TCP socket中，然后发送给客户端
+2. [OutgoingMessage](http://nodejs.cn/api/http.html#http_class_http_outgoingmessage): 到socket的可写流。在上面例子中，可以在response handler中通过 `res` 对象访问到该流。NodeJS的 `http` 模块将写入 `OutgoingMessage`  可写流的数据传递给套接字流。这个数据然后被写入到由操作系统创建的实际的TCP socket中，然后发送给客户端
 
 掌握了这些信息后，我们的回响服务器可以用下图表示：
 
@@ -148,7 +148,7 @@ reader.pipe(writer2)
 
 > 管道的问题
 
-管道虽然很有用和便利，但是对流使用多管道处理错误会变得很棘手。这是因为读流或可写流如果发生错误，管道不会自动的销毁和清理，这可能导致内存泄漏。因此，在生产中使用 `require('stream').pipeline` 函数去将流管道化就很明智。它能够帮助你追踪错误以及进行清理：[pipeline - nodejs docs](http://nodejs.cn/api/stream.html#stream_stream_pipeline_source_transforms_destination_callback)
+管道虽然很有用和便利，但是对流使用多管道处理错误会变得很棘手。这是因为可读流或可写流如果发生错误，管道不会自动的销毁和清理，这可能导致内存泄漏。因此，在生产中使用 `require('stream').pipeline` 函数去将流管道化就很明智。它能够帮助你追踪错误以及进行清理：[pipeline - nodejs docs](http://nodejs.cn/api/stream.html#stream_stream_pipeline_source_transforms_destination_callback)
 
 
 
@@ -194,7 +194,7 @@ app.listen(3000)
 下面我们启动服务，使用 `curl` 命令：
 
 ```bash
-curl -d"test" http://localhost:3000/hash
+curl -d "test" http://localhost:3000/hash
 ```
 
 你将得到下面输出响应内容，它是对 `test` 进行 `SHA-512`后，然后base64编码后的字符：
